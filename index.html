@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MSC Kiosk</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">Loading...</div>
+
+  <!-- APP -->
+  <div id="app">
+
+    <!-- HOME -->
+    <section id="homeScreen" class="screen active">
+      <div class="background home-bg"></div>
+
+      <div class="hotspot homeBtn" onclick="goHome()"></div>
+      <div class="hotspot guideBtn" onclick="showScreen('guideScreen')"></div>
+      <div class="hotspot aboutBtn" onclick="showScreen('aboutScreen')"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="aboutScreen" class="screen">
+      <div class="background about-bg"></div>
+
+      <div class="hotspot backBtn" onclick="goHome()"></div>
+    </section>
+
+    <!-- GUIDE -->
+    <section id="guideScreen" class="screen">
+      <div class="background guide-bg"></div>
+
+      <div class="hotspot servicesCard" onclick="showScreen('servicesScreen')"></div>
+      <div class="hotspot doctorsCard" onclick="showScreen('clinicsScreen')"></div>
+      <div class="hotspot mapCard" onclick="showScreen('mapScreen')"></div>
+      <div class="hotspot restoCard" onclick="showScreen('restaurantScreen')"></div>
+      <div class="hotspot specialtyCard" onclick="showScreen('specialtyScreen')"></div>
+
+      <div class="hotspot topAbout" onclick="showScreen('aboutScreen')"></div>
+      <div class="hotspot topMap" onclick="showScreen('mapScreen')"></div>
+      <div class="hotspot topHome" onclick="goHome()"></div>
+    </section>
+
+    <!-- =========================================
+     CLINICS SCREEN
+========================================= -->
+
+<!-- =========================================
+     CLINICS SCREEN
+========================================= -->
+
+<section id="clinicsScreen" class="screen">
+
+  <!-- BACKGROUND -->
+  <div class="background clinics-bg"></div>
+
+  <!-- DENTISTRY -->
+  <div class="hotspot dentalBtn"
+       onclick="showScreen('dentistryScreen')"></div>
+
+  <!-- ENT -->
+  <div class="hotspot entBtn"
+       onclick="showScreen('entScreen')"></div>
+
+  <!-- OBGYNE -->
+  <div class="hotspot obBtn"
+       onclick="showScreen('obgyneScreen')"></div>
+
+  <!-- PEDIATRICS -->
+  <div class="hotspot pediaBtn"
+       onclick="showScreen('pediaScreen')"></div>
+
+  <!-- ONCOLOGY -->
+  <div class="hotspot radiationBtn"
+       onclick="showScreen('oncoScreen')"></div>
+
+  <!-- PHYSICAL REHAB -->
+  <div class="hotspot rehabBtn"
+       onclick="showScreen('physicalrehabScreen')"></div>
+
+  <!-- INTERNAL -->
+  <div class="hotspot internalBtn"
+       onclick="showScreen('internal1Screen')"></div>
+
+  <!-- OPHTHALMOLOGY -->
+  <div class="hotspot ophthaBtn"
+       onclick="showScreen('ophtamologyScreen')"></div>
+
+  <!-- SURGERY -->
+  <div class="hotspot surgeryBtn"
+       onclick="showScreen('surgeryScreen')"></div>
+
+  <!-- BACK -->
+  <div class="hotspot bigbackHome"
+       onclick="showScreen('guideScreen')"></div>
+
+</section>
+
+<!-- =========================================
+     CLINIC DISPLAY SCREENS
+========================================= -->
+
+<section id="dentistryScreen" class="screen">
+  <div class="background dentistry-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+<section id="entScreen" class="screen">
+  <div class="background ent-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+<section id="obgyneScreen" class="screen">
+  <div class="background obgyne-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+<section id="pediaScreen" class="screen">
+  <div class="background pedia-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+<section id="oncoScreen" class="screen">
+  <div class="background onco-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+<section id="physicalrehabScreen" class="screen">
+  <div class="background physicalrehab-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+
+<!-- =========================================
+     INTERNAL PAGE 1
+========================================= -->
+
+<section id="internal1Screen" class="screen">
+
+  <div class="background internal1-bg"></div>
+
+  <!-- PAGE 1 BUTTON -->
+<div class="hotspot internalPage1Btn"
+     onclick="showScreen('internal1Screen')"></div>
+
+<!-- PAGE 2 BUTTON -->
+<div class="hotspot internalPage2Btn"
+     onclick="showScreen('internal2Screen')"></div>
+
+<!-- BACK -->
+<div class="hotspot internalBackBtn"
+     onclick="showScreen('clinicsScreen')"></div>
+
+</section>
+
+<!-- =========================================
+     INTERNAL PAGE 2
+========================================= -->
+
+<section id="internal2Screen" class="screen">
+
+  <div class="background internal2-bg"></div>
+
+  <!-- PAGE 1 BUTTON -->
+<div class="hotspot internalPage1Btn"
+     onclick="showScreen('internal1Screen')"></div>
+
+<!-- PAGE 2 BUTTON -->
+<div class="hotspot internalPage2Btn"
+     onclick="showScreen('internal2Screen')"></div>
+
+<!-- BACK -->
+<div class="hotspot internalBackBtn"
+     onclick="showScreen('clinicsScreen')"></div>
+
+</section>
+
+<section id="ophtamologyScreen" class="screen">
+  <div class="background ophtamology-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+<section id="surgeryScreen" class="screen">
+  <div class="background surgery-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('clinicsScreen')"></div>
+</section>
+
+
+
+    <!-- SERVICES -->
+    <section id="servicesScreen" class="screen">
+      <div class="background services-bg"></div>
+
+      <div class="hotspot serviceBtn adminBtn" onclick="showScreen('adminScreen')"></div>
+      <div class="hotspot serviceBtn clinicalBtn" onclick="showScreen('clinicalScreen')"></div>
+      <div class="hotspot serviceBtn specializedBtn" onclick="showScreen('specializedScreen')"></div>
+      <div class="hotspot serviceBtn financialBtn" onclick="showScreen('financialScreen')"></div>
+      <div class="hotspot serviceBtn ancillaryBtn" onclick="showScreen('ancillaryScreen')"></div>
+      <div class="hotspot serviceBtn supportBtn" onclick="showScreen('supportScreen')"></div>
+      <div class="hotspot serviceBtn spiritBtn" onclick="showScreen('spiritScreen')"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('guideScreen')"></div>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="adminScreen" class="screen">
+      <div class="background admin-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- CLINICAL -->
+    <section id="clinicalScreen" class="screen">
+      <div class="background clinical-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- SPECIALIZED -->
+    <section id="specializedScreen" class="screen">
+      <div class="background specialized-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- FINANCIAL -->
+    <section id="financialScreen" class="screen">
+      <div class="background financial-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- ANCILLARY -->
+    <section id="ancillaryScreen" class="screen">
+      <div class="background ancillary-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="supportScreen" class="screen">
+      <div class="background support-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- SPIRIT -->
+    <section id="spiritScreen" class="screen">
+      <div class="background spirit-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('servicesScreen')"></div>
+    </section>
+
+    <!-- =========================================
+     SPECIALTY SCREEN REWRITE
+========================================= -->
+
+<section id="specialtyScreen" class="screen">
+
+  <div class="background specialty-bg"></div>
+
+  <!-- TOP ROW -->
+  <div class="hotspot specialtyBtn cancerBtn"
+       onclick="showScreen('cancerScreen')"></div>
+
+  <div class="hotspot specialtyBtn eyeBtn"
+       onclick="showScreen('eyeScreen')"></div>
+
+  <div class="hotspot specialtyBtn specialityrehabBtn"
+     onclick="showScreen('rehabScreen')"></div>
+
+  <div class="hotspot specialtyBtn hemoBtn"
+       onclick="showScreen('hemoScreen')"></div>
+
+  <!-- BOTTOM ROW -->
+  <div class="hotspot specialtyBtn cardioBtn"
+       onclick="showScreen('cardioScreen')"></div>
+
+  <div class="hotspot specialtyBtn neuroBtn"
+       onclick="showScreen('neuroScreen')"></div>
+
+  <div class="hotspot specialtyBtn hearingBtn"
+       onclick="showScreen('hearingScreen')"></div>
+
+  <div class="hotspot specialtyBtn rcuBtn"
+       onclick="showScreen('rcuScreen')"></div>
+
+  <!-- BACK -->
+  <div class="hotspot backBtn"
+       onclick="showScreen('guideScreen')"></div>
+
+</section>
+
+
+<!-- =========================================
+     SPECIALTY DISPLAY SCREENS
+========================================= -->
+
+<section id="cancerScreen" class="screen">
+  <div class="background cancer-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="eyeScreen" class="screen">
+  <div class="background eye-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="rehabScreen" class="screen">
+  <div class="background rehab-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="hemoScreen" class="screen">
+  <div class="background hemo-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="cardioScreen" class="screen">
+  <div class="background cardio-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="neuroScreen" class="screen">
+  <div class="background neuro-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="hearingScreen" class="screen">
+  <div class="background hearing-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+</section>
+
+<section id="rcuScreen" class="screen">
+  <div class="background rcu-bg"></div>
+  <div class="hotspot backBtn"
+       onclick="showScreen('specialtyScreen')"></div>
+
+       
+</section>
+
+
+    <!-- RESTAURANT -->
+    <section id="restaurantScreen" class="screen">
+      <div class="background restaurant-bg"></div>
+
+      <div class="hotspot backBtn" onclick="showScreen('guideScreen')"></div>
+    </section>
+
+    <!-- MAP -->
+    <section id="mapScreen" class="screen">
+
+      <div class="container">
+
+        <aside class="sidebar">
+
+          <div class="header">
+            <h1>Hospital Directory</h1>
+            <p>Interactive Kiosk Navigation</p>
+          </div>
+
+          <div class="sidebar-content" id="destinations"></div>
+
+        </aside>
+
+        <main class="map-area">
+
+          <div class="top-bar">
+
+            <button class="switch-btn" onclick="showScreen('guideScreen')">
+              Back
+            </button>
+
+            <span>Touch a destination</span>
+
+            <button class="switch-btn" onclick="switchMap()">
+              Switch Building
+            </button>
+
+          </div>
+
+          <div class="map-container">
+
+            <img id="mapImage" src="map/msc-map.png">
+
+            <div id="marker" class="marker"></div>
+
+          </div>
+
+          <div class="floor-sidebar">
+
+            <button class="floor-btn" onclick="changeFloor(1)">1F</button>
+            <button class="floor-btn" onclick="changeFloor(2)">2F</button>
+            <button class="floor-btn" onclick="changeFloor(3)">3F</button>
+            <button class="floor-btn" id="floor4" onclick="changeFloor(4)">4F</button>
+
+          </div>
+
+        </main>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

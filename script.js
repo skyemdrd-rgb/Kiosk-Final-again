@@ -1,0 +1,403 @@
+window.addEventListener('load', () => {
+
+  /* =========================================
+     ELEMENTS
+  ========================================= */
+
+  const app = document.getElementById('app');
+  const loader = document.getElementById('loader');
+
+  const screens =
+    document.querySelectorAll('.screen');
+
+  const mapImage =
+    document.getElementById('mapImage');
+
+  const marker =
+    document.getElementById('marker');
+
+  const destinations =
+    document.getElementById('destinations');
+
+  const floor4Btn =
+    document.getElementById('floor4');
+
+  /* =========================================
+     APP SCALE
+  ========================================= */
+
+  function scaleApp(){
+
+    const baseWidth = 3840;
+    const baseHeight = 2160;
+
+    const scale = Math.min(
+      window.innerWidth / baseWidth,
+      window.innerHeight / baseHeight
+    );
+
+    app.style.width = `${baseWidth}px`;
+    app.style.height = `${baseHeight}px`;
+
+    app.style.transform =
+      `scale(${scale})`;
+
+    app.style.transformOrigin =
+      'top left';
+
+    const scaledWidth =
+      baseWidth * scale;
+
+    const scaledHeight =
+      baseHeight * scale;
+
+    app.style.left =
+      `${(window.innerWidth - scaledWidth) / 2}px`;
+
+    app.style.top =
+      `${(window.innerHeight - scaledHeight) / 2}px`;
+  }
+
+  scaleApp();
+
+  window.addEventListener(
+    'resize',
+    scaleApp
+  );
+
+  /* =========================================
+     SCREEN NAVIGATION
+  ========================================= */
+
+  window.showScreen = function(id){
+
+    const target =
+      document.getElementById(id);
+
+    if(!target) return;
+
+    screens.forEach(screen => {
+      screen.classList.remove('active');
+    });
+
+    target.classList.add('active');
+  };
+
+  window.goHome = function(){
+    showScreen('homeScreen');
+  };
+
+  window.goGuide = function(){
+    showScreen('guideScreen');
+  };
+
+  window.goStart = function(){
+    showScreen('startScreen');
+  };
+
+  /* =========================================
+     MAP STATE
+  ========================================= */
+
+  let currentMap = 'new';
+  let currentFloor = 1;
+
+  /* =========================================
+     MAP DATA
+  ========================================= */
+
+  const floors = {
+
+    old: {
+
+      1:{
+        image:'map/old-building-map.png',
+
+        destinations:[
+
+          { name:'Dietary', x:34, y:31 },
+          { name:'Purchasing Office', x:39, y:10 },
+          { name:'ER', x:20, y:74 },
+          { name:'OPD', x:28, y:84 },
+          { name:'Chapel', x:39, y:69 },
+          { name:'Laboratory', x:44, y:49 },
+          { name:'Drug Testing Lab', x:38, y:48 },
+          { name:'Medical Social Service', x:26, y:60 },
+          { name:'Medical Imaging', x:30, y:58 },
+          { name:'Pharmacy', x:49, y:76 },
+          { name:'Admin Office', x:36, y:85 },
+          { name:'Business Office', x:47, y:86 },
+          { name:'MIS', x:61, y:18 },
+          { name:'HR Office', x:61, y:38 },
+          { name:'Training Room', x:70, y:18 },
+          { name:'Doctors Quarter', x:76, y:56 },
+          { name:'Medical Record', x:68, y:66 },
+          { name:'Photocopy', x:73, y:66 },
+          { name:'Dorms', x:78, y:80 },
+          { name:'MSC Entrance', x:74, y:6 },
+          { name:'ATM', x:54, y:93 }
+
+        ]
+      },
+
+      2:{
+        image:'map/old-building-2nd-floor.png',
+
+        destinations:[
+
+          { name:'PICU', x:30, y:35 },
+          { name:'ICU', x:30, y:55 },
+          { name:'OR', x:12, y:85 },
+          { name:'Gastrointestinal Center', x:18, y:75 },
+          { name:'Bridge to new building', x:88, y:10 }
+
+        ]
+      },
+
+      3:{
+        image:'map/old-building-3rd-floor.png',
+
+        destinations:[]
+      }
+
+    },
+
+    new: {
+
+      1:{
+        image:'map/msc-map.png',
+
+        destinations:[
+
+          { name:'Canteen', x:21, y:24 },
+          { name:'Eye Surgi Center', x:22, y:36 },
+          { name:'ACES', x:23, y:50 },
+          { name:'Rehabilitation Center', x:43, y:36 },
+          { name:'Hemodialysis Center', x:40, y:50 },
+          { name:'Elevator', x:61, y:61 },
+          { name:'Sleep Lab', x:30, y:76 },
+          { name:'Cardiovascular Center', x:40, y:76 },
+          { name:'Med Express', x:50, y:76 },
+          { name:'Cashier Satellite', x:74, y:53 },
+          { name:'Kraft & Kettle', x:80, y:53 },
+          { name:'Cancer Center', x:93, y:74 },
+          { name:'PH Heart Office', x:84, y:76 }
+
+        ]
+      },
+
+      2:{
+        image:'map/msc-2nd-floor.png',
+
+        destinations:[
+
+          { name:'DR Clinics', x:15, y:42 },
+          { name:'Elevator', x:64, y:45 }
+
+        ]
+      },
+
+      3:{
+        image:'map/msc-3rd-floor.png',
+
+        destinations:[
+
+          { name:'Executive Office', x:25, y:45 },
+          { name:'Board Room', x:60, y:55 }
+
+        ]
+      },
+
+      4:{
+        image:'map/msc-4th-floor.png',
+
+        destinations:[
+
+          { name:'Hearing Center', x:45, y:18 }
+
+        ]
+      }
+
+    }
+
+  };
+
+  /* =========================================
+     RENDER DESTINATIONS
+  ========================================= */
+
+  function renderDestinations(){
+
+    const data =
+      floors[currentMap][currentFloor];
+
+    if(!data) return;
+
+    /* MAP IMAGE */
+
+    mapImage.classList.remove(
+      'map-fade'
+    );
+
+    void mapImage.offsetWidth;
+
+    mapImage.src = data.image;
+
+    mapImage.classList.add(
+      'map-fade'
+    );
+
+    /* CLEAR DESTINATIONS */
+
+    destinations.innerHTML = '';
+
+    /* CREATE BUTTONS */
+
+    data.destinations.forEach(item => {
+
+      const button =
+        document.createElement('div');
+
+      button.className =
+        'destination';
+
+      button.innerText =
+        item.name;
+
+      button.onclick = () => {
+        showWaypoint(item.x, item.y);
+      };
+
+      destinations.appendChild(
+        button
+      );
+
+    });
+
+  }
+
+  /* =========================================
+     WAYPOINT
+  ========================================= */
+
+  window.showWaypoint = function(x, y){
+
+    marker.style.display =
+      'block';
+
+    marker.style.left =
+      `${x}%`;
+
+    marker.style.top =
+      `${y}%`;
+  };
+
+  /* =========================================
+     FLOOR CHANGE
+  ========================================= */
+
+  window.changeFloor = function(floor){
+
+    currentFloor = floor;
+
+    /* OLD BUILDING HAS NO 4F */
+
+    if(
+      currentMap === 'old' &&
+      currentFloor === 4
+    ){
+      currentFloor = 1;
+    }
+
+    /* TOGGLE 4F BUTTON */
+
+    if(floor4Btn){
+
+      floor4Btn.style.display =
+        currentMap === 'new'
+        ? 'block'
+        : 'none';
+    }
+
+    /* RESET MARKER */
+
+    marker.style.display =
+      'none';
+
+    renderDestinations();
+  };
+
+  /* =========================================
+     SWITCH MAP
+  ========================================= */
+
+  window.switchMap = function(){
+
+    currentMap =
+      currentMap === 'new'
+      ? 'old'
+      : 'new';
+
+    if(
+      currentMap === 'old' &&
+      currentFloor === 4
+    ){
+      currentFloor = 1;
+    }
+
+    changeFloor(currentFloor);
+  };
+
+  /* =========================================
+     IDLE TIMER
+  ========================================= */
+
+  let idleTimer;
+
+  function resetIdleTimer(){
+
+    clearTimeout(idleTimer);
+
+    idleTimer = setTimeout(() => {
+
+      if(
+        document.getElementById(
+          'startScreen'
+        )
+      ){
+        showScreen('startScreen');
+      }
+      else{
+        showScreen('homeScreen');
+      }
+
+    }, 300000);
+
+  }
+
+  [
+    'mousemove',
+    'mousedown',
+    'touchstart',
+    'click',
+    'keydown'
+  ].forEach(event => {
+
+    document.addEventListener(
+      event,
+      resetIdleTimer
+    );
+
+  });
+
+  resetIdleTimer();
+
+  /* =========================================
+     INIT
+  ========================================= */
+
+  renderDestinations();
+
+  loader.style.display = 'none';
+
+});
