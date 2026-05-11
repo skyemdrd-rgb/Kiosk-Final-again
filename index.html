@@ -32,27 +32,8 @@
 <link rel="preload" as="image" href="map/old-building-2nd-floor.png">
 <link rel="preload" as="image" href="map/old-building-3rd-floor.png">
   <link rel="preload" as="image" href="interface/home.png">
-  <link rel="manifest" href="manifest.json">
 </head>
 
-<script>
-if ('serviceWorker' in navigator) {
-
-  window.addEventListener('load', () => {
-
-    navigator.serviceWorker
-      .register('./sw.js')
-      .then(() => {
-        console.log('Service Worker Registered');
-      })
-      .catch(error => {
-        console.log(error);
-      });
-
-  });
-
-}
-</script>
 
 <body>
 
