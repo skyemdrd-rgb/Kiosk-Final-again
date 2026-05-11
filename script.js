@@ -28,8 +28,8 @@ window.addEventListener('load', () => {
 
   function scaleApp(){
 
-  const baseWidth = 3840;
-  const baseHeight = 2160;
+  const baseWidth = 1920;
+  const baseHeight = 1080;
 
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
