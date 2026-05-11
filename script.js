@@ -22,48 +22,49 @@ window.addEventListener('load', () => {
   const floor4Btn =
     document.getElementById('floor4');
 
-  /* =========================================
-     APP SCALE
-  ========================================= */
+/* =========================
+     4K RESPONSIVE SCALE
+  ========================= */
 
   function scaleApp(){
 
-    const baseWidth = 3840;
-    const baseHeight = 2160;
+  const baseWidth = 3840;
+  const baseHeight = 2160;
 
-    const scale = Math.min(
-      window.innerWidth / baseWidth,
-      window.innerHeight / baseHeight
-    );
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
 
-    app.style.width = `${baseWidth}px`;
-    app.style.height = `${baseHeight}px`;
+  const scaleX = windowWidth / baseWidth;
+  const scaleY = windowHeight / baseHeight;
 
-    app.style.transform =
-      `scale(${scale})`;
+  // ✅ FIX: use MIN to fit entire UI
+  const scale = Math.min(scaleX, scaleY);
 
-    app.style.transformOrigin =
-      'top left';
+  app.style.width = baseWidth + 'px';
+  app.style.height = baseHeight + 'px';
 
-    const scaledWidth =
-      baseWidth * scale;
+  app.style.transform = `scale(${scale})`;
+  app.style.transformOrigin = 'top left';
 
-    const scaledHeight =
-      baseHeight * scale;
+  const scaledWidth = baseWidth * scale;
+  const scaledHeight = baseHeight * scale;
 
-    app.style.left =
-      `${(window.innerWidth - scaledWidth) / 2}px`;
+  // ✅ PERFECT CENTERING
+  app.style.position = 'absolute';
+  app.style.left = ((windowWidth - scaledWidth) / 2) + 'px';
+  app.style.top = ((windowHeight - scaledHeight) / 2) + 'px';
+}
 
-    app.style.top =
-      `${(window.innerHeight - scaledHeight) / 2}px`;
-  }
+  /* =========================================
+   START SCALING
+========================================= */
 
-  scaleApp();
+scaleApp();
 
-  window.addEventListener(
-    'resize',
-    scaleApp
-  );
+window.addEventListener(
+  'resize',
+  scaleApp
+);
 
   /* =========================================
      SCREEN NAVIGATION
@@ -115,29 +116,49 @@ window.addEventListener('load', () => {
 
         destinations:[
 
-          { name:'Dietary', x:34, y:31 },
-          { name:'Purchasing Office', x:39, y:10 },
-          { name:'ER', x:20, y:74 },
-          { name:'OPD', x:28, y:84 },
-          { name:'Chapel', x:39, y:69 },
-          { name:'Laboratory', x:44, y:49 },
-          { name:'Drug Testing Lab', x:38, y:48 },
-          { name:'Medical Social Service', x:26, y:60 },
-          { name:'Medical Imaging', x:30, y:58 },
-          { name:'Pharmacy', x:49, y:76 },
-          { name:'Admin Office', x:36, y:85 },
-          { name:'Business Office', x:47, y:86 },
-          { name:'MIS', x:61, y:18 },
-          { name:'HR Office', x:61, y:38 },
-          { name:'Training Room', x:70, y:18 },
-          { name:'Doctors Quarter', x:76, y:56 },
-          { name:'Medical Record', x:68, y:66 },
-          { name:'Photocopy', x:73, y:66 },
-          { name:'Dorms', x:78, y:80 },
-          { name:'MSC Entrance', x:74, y:6 },
-          { name:'ATM', x:54, y:93 }
+  { name:'Admin Office', x:36, y:85 },
 
-        ]
+  { name:'ATM', x:54, y:93 },
+
+  { name:'Business Office', x:47, y:86 },
+
+  { name:'Chapel', x:39, y:69 },
+
+  { name:'Dietary', x:34, y:31 },
+
+  { name:'Doctors Quarter', x:76, y:56 },
+
+  { name:'Dorms', x:78, y:80 },
+
+  { name:'Drug Testing Lab', x:38, y:48 },
+
+  { name:'ER', x:20, y:74 },
+
+  { name:'HR Office', x:61, y:38 },
+
+  { name:'Laboratory', x:44, y:49 },
+
+  { name:'Medical Imaging', x:30, y:58 },
+
+  { name:'Medical Record', x:68, y:66 },
+
+  { name:'Medical Social Service', x:26, y:60 },
+
+  { name:'MIS', x:61, y:18 },
+
+  { name:'MSC Entrance', x:74, y:6 },
+
+  { name:'OPD', x:28, y:84 },
+
+  { name:'Pharmacy', x:49, y:76 },
+
+  { name:'Photocopy', x:73, y:66 },
+
+  { name:'Purchasing Office', x:39, y:10 },
+
+  { name:'Training Room', x:70, y:18 }
+
+]
       },
 
       2:{
@@ -169,19 +190,30 @@ window.addEventListener('load', () => {
 
         destinations:[
 
-          { name:'Canteen', x:21, y:24 },
-          { name:'Eye Surgi Center', x:22, y:36 },
-          { name:'ACES', x:23, y:50 },
-          { name:'Rehabilitation Center', x:43, y:36 },
-          { name:'Hemodialysis Center', x:40, y:50 },
-          { name:'Elevator', x:61, y:61 },
-          { name:'Sleep Lab', x:30, y:76 },
-          { name:'Cardiovascular Center', x:40, y:76 },
-          { name:'Med Express', x:50, y:76 },
-          { name:'Cashier Satellite', x:74, y:53 },
-          { name:'Kraft & Kettle', x:80, y:53 },
-          { name:'Cancer Center', x:93, y:74 },
-          { name:'PH Heart Office', x:84, y:76 }
+  { name:'ACES', x:23, y:50 },
+
+  { name:'Cancer Center', x:87, y:74 },
+
+  { name:'Canteen', x:25, y:24 },
+
+  { name:'Cardiovascular Center', x:40, y:76 },
+
+  { name:'Cashier Satellite', x:74, y:53 },
+
+  { name:'Elevator', x:61, y:61 },
+
+  { name:'Eye Surgi Center', x:22, y:36 },
+
+  { name:'Hemodialysis Center', x:40, y:50 },
+
+  { name:'Kraft & Kettle', x:80, y:53 },
+
+  { name:'Med Express', x:50, y:76 },
+
+  { name:'Rehabilitation Center', x:43, y:36 },
+
+  { name:'Sleep Lab', x:30, y:76 }
+
 
         ]
       },
@@ -202,8 +234,7 @@ window.addEventListener('load', () => {
 
         destinations:[
 
-          { name:'Executive Office', x:25, y:45 },
-          { name:'Board Room', x:60, y:55 }
+    
 
         ]
       },
@@ -282,15 +313,20 @@ window.addEventListener('load', () => {
 
   window.showWaypoint = function(x, y){
 
-    marker.style.display =
-      'block';
+  marker.style.display = 'none';
 
-    marker.style.left =
-      `${x}%`;
+  marker.classList.remove('marker');
 
-    marker.style.top =
-      `${y}%`;
-  };
+  void marker.offsetWidth;
+
+  marker.classList.add('marker');
+
+  marker.style.display = 'block';
+
+  marker.style.left = `${x}%`;
+  marker.style.top = `${y}%`;
+
+};
 
   /* =========================================
      FLOOR CHANGE
@@ -399,5 +435,31 @@ window.addEventListener('load', () => {
   renderDestinations();
 
   loader.style.display = 'none';
+
+  document.addEventListener(
+  'gesturestart',
+  e => e.preventDefault()
+);
+
+document.addEventListener(
+  'dblclick',
+  e => e.preventDefault()
+);
+
+if('serviceWorker' in navigator){
+
+  window.addEventListener('load', () => {
+
+    navigator.serviceWorker.register('sw.js')
+      .then(() => {
+
+        console.log('Service Worker Registered');
+
+      });
+
+  });
+
+}
+
 
 });
