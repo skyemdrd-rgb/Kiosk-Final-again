@@ -15,7 +15,10 @@
 />
   <title>MSC Kiosk</title>
 
-  
+  <link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="style.css">
   <!-- MAP PRELOADS -->
@@ -31,6 +34,25 @@
   <link rel="preload" as="image" href="interface/home.png">
   <link rel="manifest" href="manifest.json">
 </head>
+
+<script>
+if ('serviceWorker' in navigator) {
+
+  window.addEventListener('load', () => {
+
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then(() => {
+        console.log('Service Worker Registered');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+  });
+
+}
+</script>
 
 <body>
 
