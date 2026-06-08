@@ -114,18 +114,41 @@ body{
 .specialty-bg{background-image:url('interface/msc.png');}
 .clinics-bg{background-image:url('interface/clinics.png');}
 
+.about1-bg{
+  background-image:url('about/about-page1.png');
+}
+
+.about2-bg{
+  background-image:url('about/about-page2.png');
+}
+
+.aboutPage1Btn{
+  top:70%;
+  right: 0;
+  width:8%;
+  height:7%;
+}
+
+.aboutPage2Btn{
+  top:80%;
+  right: 0%;
+  width:8%;
+  height:7%;
+}
+
+
+
 /* =========================================
    SERVICES
 ========================================= */
 
-.services-bg{background-image:url('services/services.png');}
-.admin-bg{background-image:url('services/administrative.png');}
-.clinical-bg{background-image:url('services/clinicalservices.png');}
-.specialized-bg{background-image:url('services/specializedservices.png');}
-.financial-bg{background-image:url('services/financial.png');}
-.ancillary-bg{background-image:url('services/ancillary.png');}
-.support-bg{background-image:url('services/support.png');}
-.spirit-bg{background-image:url('services/spirit.png');}
+.services-bg{
+  background-image:url('services/services-main.png');
+}
+
+.hmo-bg{
+  background-image:url('services/hmo.png');
+}
 
 /* =========================================
    SPECIALTY BACKGROUNDS
@@ -146,8 +169,6 @@ body{
 
 .dentistry-bg{background-image:url('clinics/dentistry.png');}
 .ent-bg{background-image:url('clinics/ent.png');}
-.internal1-bg{background-image:url('clinics/internal1.png');}
-.internal2-bg{background-image:url('clinics/internal2.png');}
 .obgyne-bg{background-image:url('clinics/obgyne.png');}
 .onco-bg{background-image:url('clinics/onco.png');}
 .ophtamology-bg{background-image:url('clinics/ophtamology.png');}
@@ -181,22 +202,15 @@ body.debug .hotspot{
    HOME
 ========================================= */
 
-.homeBtn{
-  left:11%;
-  bottom:5%;
-  width:25%;
-  height:20%;
-}
-
 .guideBtn{
-  left:37.2%;
+  left:24.2%;
   bottom:5%;
   width:25.5%;
   height:20%;
 }
 
 .aboutBtn{
-  left:64.2%;
+  left:51.2%;
   bottom:5%;
   width:24.5%;
   height:20%;
@@ -283,19 +297,803 @@ body.debug .hotspot{
    SERVICES BUTTONS
 ========================================= */
 
-.serviceBtn{
-  left:15%;
-  width:68%;
-  height:8.8%;
+/* =========================================
+   SERVICES BUTTONS
+========================================= */
+
+.hmoBtn,
+.cashierBtn,
+.labBtn,
+.ancillaryBtn,
+.processingUnitBtn,
+.specializedBtn{
+  width:40%;
+  height:10%;
 }
 
-.adminBtn{top:16%;}
-.clinicalBtn{top:28%;}
-.specializedBtn{top:40%;}
-.financialBtn{top:52%;}
-.ancillaryBtn{top:64%;}
-.supportBtn{top:76%;}
-.spiritBtn{top:88%;}
+/* LEFT COLUMN */
+
+.hmoBtn{
+  top:25.5%;
+  left:8%;
+}
+
+.cashierBtn{
+  top:39%;
+  left:8%;
+}
+
+.labBtn{
+  top:52.5%;
+  left:8%;
+}
+
+/* RIGHT COLUMN */
+
+.ancillaryBtn{
+  top:25.5%;
+  left:52%;
+}
+
+.processingUnitBtn{
+  top:39%;
+  left:52%;
+}
+
+.specializedBtn{
+  top:52.5%;
+  left:52%;
+}
+
+/* BOTTOM */
+
+.simBtn{
+  top:64%;
+  left:15%;
+
+  width:70%;
+  height:10%;
+}
+
+/* =========================================
+   SERVICE SCREENS
+========================================= */
+
+.cashier-bg{
+  background-image:url('services/cashier.png');
+}
+
+.processingunit-bg{
+  background-image:url('services/processing-unit.png');
+}
+
+.lab-bg{
+  background-image:url('services/lab.png');
+}
+
+.labDriveThru-bg{
+  background-image:url('services/lab-drive-thru.png');
+}
+
+.ancillary-bg{
+  background-image:url('services/ancillary.png');
+}
+
+.specialized-bg{
+  background-image:url('services/specialized.png');
+}
+
+.sim-bg{
+  background-image:url('services/sim.png');
+}
+
+
+
+/* LABORATORY & PATHOLOGY */
+.ancillaryLabBtn{
+  top:41%;
+  left: 6.5%;
+
+  width:21%;
+  height:24%;
+}
+
+/* MEDICAL IMAGING */
+.ancillaryImagingBtn{
+  top:41%;
+  left:28.5%;
+
+  width:21%;
+  height:24%;
+}
+
+/* PHARMACY */
+.ancillaryPharmacyBtn{
+  top:41%;
+  left:50.5%;
+
+  width:21%;
+  height:24%;
+}
+
+/* PHYSICAL REHABILITATION */
+.ancillaryRehabBtn{
+  top:41%;
+  left:72.5%;
+
+  width:21%;
+  height:24%;
+}
+
+.ancillaryLab-bg{
+  background-image:url('services/laboratory-pathology.png');
+}
+
+.ancillaryImaging-bg{
+  background-image:url('services/medical-imaging.png');
+}
+
+.ancillaryPharmacy-bg{
+  background-image:url('services/pharmacy.png');
+}
+
+.ancillaryRehab-bg{
+  background-image:url('services/physical-rehabilitation.png');
+}
+
+/* MASS SCHEDULE */
+.massScheduleBtn{
+  top:38%;
+  left:5.5%;
+
+  width:43%;
+  height:10%;
+}
+
+/* SACRAMENTS */
+.sacramentsBtn{
+  top:38%;
+  left:50.5%;
+
+  width:43%;
+  height:10%;
+}
+
+/* VOCATION PROMOTION */
+.vocationBtn{
+  top:51%;
+  left:5.5%;
+
+  width:43%;
+  height:10%;
+}
+
+/* MEDICAL SOCIAL SERVICES */
+.medicalSocialBtn{
+  top:51%;
+  left:50.5%;
+
+  width:43%;
+  height:10%;
+}
+
+.massschedule-bg{
+  background-image:url('services/mass-schedule.png');
+}
+
+.sacraments-bg{
+  background-image:url('services/sacraments.png');
+}
+
+.vocation-bg{
+  background-image:url('services/vocation-promotion.png');
+}
+
+.medicalsocial-bg{
+  background-image:url('services/medical-social-services.png');
+}
+
+.specialized-bg{
+  background-image:url('services/specialized.png');
+}
+
+/* =========================================
+   SPECIALIZED SERVICES
+========================================= */
+
+/* TOP ROW */
+
+.specializedCancerBtn{top:22.8%;left:11.2%;width:18.3%;height:19%;}
+.specializedEyeBtn{top:22.8%;left:30.6%;width:18.3%;height:19%;}
+.specializedRehabBtn{top:22.8%;left:50%;width:18.3%;height:19%;}
+.specializedHemodialysisBtn{top:22.8%;left:69.4%;width:18.3%;height:19%;}
+
+.specializedCardioBtn{top:47.6%;left:11.2%;width:18.3%;height:19%;}
+.specializedNeurosleepBtn{top:47.6%;left:30.6%;width:18.3%;height:19%;}
+.specializedHearingBtn{top:47.6%;left:50%;width:18.3%;height:19%;}
+.specializedRespiratoryBtn{top:47.6%;left:69.4%;width:18.3%;height:19%;}
+
+.specializedNuclearBtn{top:72.3%;left:20.8%;width:18.3%;height:19%;}
+.specializedGastroBtn{top:72.3%;left:40.2%;width:18.3%;height:19%;}
+.specializedTbDotsBtn{top:72.3%;left:59.6%;width:18.3%;height:19%;}
+
+.specializedCancer-bg{
+  background-image:url('services/cancer-center.png');
+}
+
+.specializedEye-bg{
+  background-image:url('services/eye-surgi-center.png');
+}
+
+.specializedRehab-bg{
+  background-image:url('services/physical-rehabilitiation-center.png');
+}
+
+.specializedHemodialysis-bg{
+  background-image:url('services/hemodialysis-center.png');
+}
+
+.specializedCardio-bg{
+  background-image:url('services/cardiovascular-center.png');
+}
+
+.specializedNeurosleep-bg{
+  background-image:url('services/neurosleep-lab.png');
+}
+
+.specializedHearing-bg{
+  background-image:url('services/hearing-center.png');
+}
+
+.specializedRespiratory-bg{
+  background-image:url('services/respiratory-care-unit.png');
+}
+
+.specializedNuclear-bg{
+  background-image:url('services/nuclear-medicine-center.png');
+}
+
+.specializedGastro-bg{
+  background-image:url('services/gastrointestinal-center.png');
+}
+
+.specializedTbDots-bg{
+  background-image:url('services/tb-dots-hiv.png');
+}
+
+/* =========================================
+   HMO SCREEN
+========================================= */
+
+.partnerHmoBtn{
+  left:30.5%;
+  top:83.5%;
+
+  width:37%;
+  height:8.8%;
+
+  border-radius:40px;
+}
+
+/* =========================================
+   HMO PARTNERS
+========================================= */
+
+.partnerHmo-bg{
+  background-image:url('services/hmo-partners.png');
+}
+
+/* =========================================
+   COOP HEALTH
+========================================= */
+
+.coophealth-bg{
+  background-image:url('services/coophealth.png');
+}
+
+/* COOP HEALTH BUTTON */
+
+.coopHealthBtn{
+  top:36%;
+  left:50.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   AMAPHIL
+========================================= */
+
+.amaphil-bg{
+  background-image:url('services/amaphil.png');
+}
+
+/* AMAPHIL BUTTON */
+
+.amaphilBtn{
+  top:25%;
+  left:35.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   BENLIFE
+========================================= */
+
+.benlife-bg{
+  background-image:url('services/benlife.png');
+}
+
+/* BENLIFE BUTTON */
+
+.benlifeBtn{
+  top:25%;
+  left:50%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   ETIQA
+========================================= */
+
+.etiqa-bg{
+  background-image:url('services/shared-hmo.png');
+}
+
+.etiqaBtn{
+  top:60%;
+  left:35.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   ASIANLIFE
+========================================= */
+
+.asianlife-bg{
+  background-image:url('services/shared-hmo.png');
+}
+
+.asianlifeBtn{
+  top:85%;
+  left:43%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   CAREHEALTH
+========================================= */
+
+.carehealth-bg{
+  background-image:url('services/carehealth.png');
+}
+
+.carehealthBtn{
+  top:48%;
+  left:20%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   PHILCARE
+========================================= */
+
+.philcare-bg{
+  background-image:url('services/philcare.png');
+}
+
+.philcareBtn{
+  top:48%;
+  left:5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   EASTWEST
+========================================= */
+
+.eastwest-bg{
+  background-image:url('services/eastwest.png');
+}
+
+.eastwestBtn{
+  top:48%;
+  left:50.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   WELLCARE
+========================================= */
+
+.wellcare-bg{
+  background-image:url('services/wellcare.png');
+}
+
+.wellcareBtn{
+  top:36%;
+  left:65.3%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   GETWELL
+========================================= */
+
+.getwell-bg{
+  background-image:url('services/getwell.png');
+}
+
+.getwellBtn{
+  top:36%;
+  left:35%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   FORTUNELIFE
+========================================= */
+
+.fortunelife-bg{
+  background-image:url('services/fortunelife.png');
+}
+
+.fortunelifeBtn{
+  top:48%;
+  left:65.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   INLIFE
+========================================= */
+
+.inlife-bg{
+  background-image:url('services/inlife.png');
+}
+
+.inlifeBtn{
+  top:72%;
+  left:80.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   HPPI
+========================================= */
+
+.hppi-bg{
+  background-image:url('services/hppi.png');
+}
+
+.hppiBtn{
+  top:72%;
+  left:50.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   IMS
+========================================= */
+
+.ims-bg{
+  background-image:url('services/ims.png');
+}
+
+.imsBtn{
+  top:60%;
+  left:5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   ICARE
+========================================= */
+
+.icare-bg{
+  background-image:url('services/icare.png');
+}
+
+.icareBtn{
+  top:72%;
+  left:5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   INLIFE2
+========================================= */
+
+.inlife2-bg{
+  background-image:url('services/inlife2.png');
+}
+
+.inlife2Btn{
+  top:25%;
+  left:5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   KAISER
+========================================= */
+
+.kaiser-bg{
+  background-image:url('services/kaiser.png');
+}
+
+.kaiserBtn{
+  top:25%;
+  left:20%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   LACSON
+========================================= */
+
+.lacson-bg{
+  background-image:url('services/lacson.png');
+}
+
+.lacsonBtn{
+  top:72%;
+  left:35.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   LIFEANDHEALTH
+========================================= */
+
+.lifeandhealth-bg{
+  background-image:url('services/lifeandhealth.png');
+}
+
+.lifeandhealthBtn{
+  top:72%;
+  left:65.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   MEDASIA
+========================================= */
+
+.medasia-bg{
+  background-image:url('services/medasia.png');
+}
+
+.medasiaBtn{
+  top:48%;
+  left:35.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   MEDILINK
+========================================= */
+
+.medilink-bg{
+  background-image:url('services/medilink.png');
+}
+
+.medilinkBtn{
+  top:60%;
+  left:65.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   OPTIMUM
+========================================= */
+
+.optimum-bg{
+  background-image:url('services/optimum.png');
+}
+
+.optimumBtn{
+  top:60%;
+  left:50.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   PACIFIC CROSS
+========================================= */
+
+.pacificcross-bg{
+  background-image:url('services/pacificcross.png');
+}
+
+.pacificcrossBtn{
+  top:60%;
+  left:20%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   VALUCARE
+========================================= */
+
+.valucare-bg{
+  background-image:url('services/valucare.png');
+}
+
+.valucareBtn{
+  top:25%;
+  left:80.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   FORTICARE
+========================================= */
+
+.forticare-bg{
+  background-image:url('services/forticare.png');
+}
+
+.forticareBtn{
+  top:60%;
+  left:80.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   MEDICARD
+========================================= */
+
+.medicard-bg{
+  background-image:url('services/medicard.png');
+}
+
+.medicardBtn{
+  top:36%;
+  left:80.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   INTELLICARE
+========================================= */
+
+.intellicare-bg{
+  background-image:url('services/intellicare.png');
+}
+
+.intellicareBtn{
+  top:48%;
+  left:80.5%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+/* =========================================
+   MAXICARE
+========================================= */
+
+.maxicare-bg{
+  background-image:url('services/maxicare.png');
+}
+
+.maxicareBtn{
+  top:25%;
+  left:65.3%;
+
+  width:14%;
+  height:9%;
+
+  border-radius:30px;
+}
+
+
 
 /* =========================================
    SPECIALTY BUTTONS
@@ -435,37 +1233,222 @@ body.debug .hotspot{
   height:16%;
 }
 
+.smallBackHome{
+  position:absolute;
+
+  right:0%;
+  bottom:0%;
+
+  width:8%;
+  height:15%;
+
+  z-index:20;
+}
+
+.imDept-bg{
+  background-image:url('clinics/im-dept.png');
+}
+
+
+.generalImBtn{top:27.2%;left:5.7%;width:18.7%;height:9.8%;}
+.allergologistBtn{top:27.2%;left:25.4%;width:21.4%;height:9.8%;}
+.cardiologistBtn{top:27.2%;left:47.8%;width:21.0%;height:9.8%;}
+.dermatologistBtn{top:27.2%;left:70.1%;width:20.6%;height:9.8%;}
+
+.endocrinologistBtn{top:38.1%;left:5.7%;width:27.7%;height:9.8%;}
+.gastroenterologistBtn{top:38.1%;left:34.4%;width:28.8%;height:9.8%;}
+.infectiousDiseaseBtn{top:38.1%;left:64.8%;width:26.8%;height:9.8%;}
+
+.criticalCareBtn{top:50.2%;left:5.7%;width:35.4%;height:9.8%;}
+.hematologistBtn{top:50.2%;left:42.2%;width:31.5%;height:9.8%;}
+.neurologistBtn{top:50.2%;left:74.8%;width:16.3%;height:9.8%;}
+
+.nuclearMedicineBtn{top:63.2%;left:5.7%;width:27.5%;height:9.8%;}
+.occupationalMedicineBtn{top:63.2%;left:34.4%;width:34.6%;height:9.8%;}
+.oncologistBtn{top:63.2%;left:70.2%;width:20.0%;height:9.8%;}
+
+.rheumatologistBtn{top:75.3%;left:37.8%;width:25.5%;height:9.8%;}
+
 /* =========================================
-   INTERNAL BUTTONS
+   IM DEPARTMENT SCREENS
 ========================================= */
 
-.internalPage1Btn{
-  right:0;
-  bottom:18%;
+.allergologist-bg{background-image:url('clinics/allergologist.png');}
+.cardiologist-bg{background-image:url('clinics/cardiologist.png');}
+.criticalCare-bg{background-image:url('clinics/critical-care-medicine.png');}
+.dermatologist-bg{background-image:url('clinics/dermatologist.png');}
+.endocrinologist-bg{background-image:url('clinics/endocrinologist.png');}
+.gastroenterologist-bg{background-image:url('clinics/gastroenterologist.png');}
+.generalIm-bg{background-image:url('clinics/general-im.png');}
+.hematologist-bg{background-image:url('clinics/adult-hematologist.png');}
+.infectiousDisease-bg{background-image:url('clinics/infectious-disease.png');}
+.neurologist-bg{background-image:url('clinics/neurologist.png');}
+.nuclearMedicine-bg{background-image:url('clinics/nuclear-medicine.png');}
+.occupationalMedicine-bg{background-image:url('clinics/occupational-medicine.png');}
+.oncologist-bg{background-image:url('clinics/oncologist.png');}
+.rheumatologist-bg{background-image:url('clinics/rheumatologist.png');}
 
-  width:5.8%;
-  height:6.2%;
+/* =========================================
+   PEDIA
+========================================= */
+
+.pediaDept-bg{
+  background-image:url('clinics/pedia-dept.png');
 }
 
-.internalPage2Btn{
-  right:0;
-  bottom:11%;
+.generalPediaBtn{top:25%;left:5.5%;width:42%;height:10%;}
+.pediaCardioBtn{top:25%;left:49%;width:42%;height:10%;}
 
-  width:5.5%;
-  height:6.2%;
+.pediaGastroBtn{top:40%;left:5.5%;width:42%;height:10%;}
+.pediaHemaBtn{top:40%;left:49%;width:42%;height:10%;}
+
+.pediaInfectiousBtn{top:51%;left:5.5%;width:42%;height:10%;}
+.pediaPulmoBtn{top:51%;left:49%;width:42%;height:10%;}
+
+.neonatologistBtn{top:64%;left:5.5%;width:42%;height:10%;}
+.pediaEndocrinoBtn{top:64%;left:49%;width:42%;height:10%;}
+
+.generalPedia-bg{background-image:url('clinics/general-pedia.png');}
+.neonatologist-bg{background-image:url('clinics/neonatologist.png');}
+.pediaCardio-bg{background-image:url('clinics/pedia-cardiologist.png');}
+.pediaEndocrino-bg{background-image:url('clinics/pedia-endocrinologist.png');}
+.pediaGastro-bg{background-image:url('clinics/pedia-gastroenterologist.png');}
+.pediaHema-bg{background-image:url('clinics/pedia-hematologist.png');}
+.pediaInfectious-bg{background-image:url('clinics/pedia-infectious-disease.png');}
+.pediaPulmo-bg{background-image:url('clinics/pedia-pulmonologist.png');}
+
+
+
+.surgeryDept-bg{background-image:url('clinics/surgery-dept.png');}
+
+
+.neuroSurgeryBtn{top:35%;left:4.8%;width:27.5%;height:10.5%;}
+.colorectalSurgeryBtn{top:35%;left:35.2%;width:56.5%;height:10.5%;}
+
+.cardiovascularSurgeryBtn{top:47%;left:4.8%;width:40.0%;height:10.5%;}
+.orthopedicSurgeryBtn{top:47%;left:47.0%;width:44.5%;height:10.5%;}
+
+.uroSurgeryBtn{top:61%;left:4.8%;width:40.0%;height:10.5%;}
+.generalSurgeryBtn{top:61%;left:47.0%;width:44.5%;height:10.5%;}
+
+.cardiovascularSurgery-bg{background-image:url('clinics/cardiovascular-surgery.png');}
+.colorectalSurgery-bg{background-image:url('clinics/general-and-pediatrics-colorectal-surgery.png');}
+.generalSurgery-bg{background-image:url('clinics/general-surgery.png');}
+.neuroSurgery-bg{background-image:url('clinics/neuro-surgery.png');}
+.orthopedicSurgery-bg{background-image:url('clinics/orthopedic-surgery.png');}
+.uroSurgery-bg{background-image:url('clinics/uro-surgery.png');}
+
+.ent-bg{
+  background-image:url('clinics/ent.png');
+}
+/* =========================================
+   OPHTHALMOLOGY
+========================================= */
+
+.ophthalmology-bg{
+  background-image:url('clinics/ophthalmology.png');
 }
 
-.internalBackBtn{
-  right:0;
-  bottom:3%;
+.ophthalmologist-bg{
+  background-image:url('clinics/ophthalmologist.png');
+}
 
-  width:5.2%;
-  height:6.5%;
+.acesCebu-bg{
+  background-image:url('clinics/aces-cebu-team.png');
 }
 
 /* =========================================
-   MAP SCREEN
+   OPHTHALMOLOGY MENU BUTTONS
 ========================================= */
+
+.ophthalmologistBtn{
+  top:29%;
+  left:7%;
+
+  width:40%;
+  height:12%;
+}
+
+.acesCebuBtn{
+  top:29%;
+  left:50%;
+
+  width:40%;
+  height:12%;
+}
+
+.ophtamologyBtn{
+  top:64%;
+  left:38%;
+
+  width:24%;
+  height:16%;
+}
+
+.obGyneDept-bg{
+  background-image:url('clinics/obgyne-dept.png');
+}
+
+/* =========================================
+   OB-GYNE DEPARTMENT
+========================================= */
+
+.obGyneBtn{
+  top:34%;
+  left:10%;
+
+  width:38%;
+  height:11%;
+}
+
+.obGyneOncologyBtn{
+  top:34%;
+  left:51%;
+
+  width:38%;
+  height:11%;
+}
+
+.obGyne-bg{
+  background-image:url('clinics/ob-gyne.png');
+}
+
+.obGyneOncology-bg{
+  background-image:url('clinics/ob-gyne-oncology.png');
+}
+
+.dentistryDept-bg{
+  background-image:url('clinics/dentistry-dept.png');
+}
+
+/* =========================================
+   DENTISTRY DEPARTMENT
+========================================= */
+
+.adultDentistBtn{
+  top:42%;
+  left:9%;
+
+  width:38%;
+  height:11%;
+}
+
+.pediaDentistBtn{
+  top:42%;
+  left:52%;
+
+  width:38%;
+  height:11%;
+} 
+
+.adultDentist-bg{
+  background-image:url('clinics/adult-dentist.png');
+}
+
+.pediaDentist-bg{
+  background-image:url('clinics/pedia-dentist.png');
+}
+
 
 #mapScreen{
   background:#d9d6c3;
@@ -519,10 +1502,6 @@ body.debug .hotspot{
   padding:20px;
 }
 
-/* =========================================
-   DESTINATIONS
-========================================= */
-
 .destination{
   margin-bottom:18px;
 
@@ -548,10 +1527,6 @@ body.debug .hotspot{
 .destination:hover{
   transform:scale(1.01);
 }
-
-/* =========================================
-   MAP AREA
-========================================= */
 
 .map-area{
   flex:1;
@@ -625,10 +1600,6 @@ body.debug .hotspot{
   transform:translateZ(0);
 }
 
-/* =========================================
-   MARKER
-========================================= */
-
 .marker{
   position:absolute;
 
@@ -653,58 +1624,6 @@ body.debug .hotspot{
     markerIntro .7s ease,
     markerPulse 1.5s infinite .7s;
 }
-
-@keyframes markerIntro{
-
-  0%{
-    transform:
-      translate(-50%, -50%)
-      scale(.3);
-
-    opacity:0;
-  }
-
-  50%{
-    transform:
-      translate(-50%, -50%)
-      scale(2);
-
-    opacity:1;
-  }
-
-  100%{
-    transform:
-      translate(-50%, -50%)
-      scale(1);
-  }
-
-}
-
-@keyframes markerPulse{
-
-  0%{
-    transform:
-      translate(-50%, -50%)
-      scale(1);
-  }
-
-  50%{
-    transform:
-      translate(-50%, -50%)
-      scale(1.15);
-  }
-
-  100%{
-    transform:
-      translate(-50%, -50%)
-      scale(1);
-  }
-
-}
-
-/* =========================================
-   FLOOR BUTTONS
-========================================= */
 
 .floor-sidebar{
   position:absolute;
@@ -736,24 +1655,4 @@ body.debug .hotspot{
 
   box-shadow:
     0 2px 8px rgba(0,0,0,.08);
-}
-
-/* =========================================
-   MAP FADE
-========================================= */
-
-.map-fade{
-  animation:mapFade .25s ease;
-}
-
-@keyframes mapFade{
-
-  from{
-    opacity:.4;
-  }
-
-  to{
-    opacity:1;
-  }
-
 }
