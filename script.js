@@ -419,7 +419,8 @@ document.addEventListener(
   resetScreensaver
 );
 
-resetScreensaver();
+goHome();
+screensaver.style.display = 'block';
   /* =========================================
      INIT
   ========================================= */
