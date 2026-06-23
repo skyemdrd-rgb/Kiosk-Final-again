@@ -393,20 +393,25 @@ window.addEventListener(
 
 let screensaverTimer;
 
+function showScreensaver(){
+  goHome();
+  screensaver.style.display = 'block';
+}
+
+function hideScreensaver(){
+  screensaver.style.display = 'none';
+}
+
 function resetScreensaver(){
 
-  screensaver.style.display = 'none';
+  hideScreensaver();
 
   clearTimeout(screensaverTimer);
 
-  screensaverTimer = setTimeout(() => {
-
-    goHome();
-
-    screensaver.style.display = 'block';
-
-  }, 180000); // 3 minutes
-
+  screensaverTimer = setTimeout(
+    showScreensaver,
+    180000
+  ); // 3 minutes
 }
 
 document.addEventListener(
@@ -419,8 +424,9 @@ document.addEventListener(
   resetScreensaver
 );
 
-resetScreensaver();
+/* START WITH SCREENSAVER */
 
+showScreensaver();
   /* =========================================
      INIT
   ========================================= */
