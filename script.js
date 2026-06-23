@@ -388,45 +388,38 @@ window.addEventListener(
      IDLE TIMER
   ========================================= */
 
-  let idleTimer;
+  const screensaver =
+  document.getElementById('screensaver');
 
-  function resetIdleTimer(){
+let screensaverTimer;
 
-    clearTimeout(idleTimer);
+function resetScreensaver(){
 
-    idleTimer = setTimeout(() => {
+  screensaver.style.display = 'none';
 
-      if(
-        document.getElementById(
-          'startScreen'
-        )
-      ){
-        showScreen('startScreen');
-      }
-      else{
-        showScreen('homeScreen');
-      }
+  clearTimeout(screensaverTimer);
 
-    }, 300000);
+  screensaverTimer = setTimeout(() => {
 
-  }
+    goHome();
 
-  [
-    'mousemove',
-    'mousedown',
-    'touchstart',
-    'click',
-    'keydown'
-  ].forEach(event => {
+    screensaver.style.display = 'block';
 
-    document.addEventListener(
-      event,
-      resetIdleTimer
-    );
+  }, 180000); // 3 minutes
 
-  });
+}
 
-  resetIdleTimer();
+document.addEventListener(
+  'click',
+  resetScreensaver
+);
+
+document.addEventListener(
+  'touchstart',
+  resetScreensaver
+);
+
+resetScreensaver();
 
   /* =========================================
      INIT
