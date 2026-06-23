@@ -388,47 +388,38 @@ window.addEventListener(
      IDLE TIMER
   ========================================= */
 
-  const screensaver = document.getElementById('screensaver');
+  const screensaver =
+  document.getElementById('screensaver');
 
 let screensaverTimer;
-let firstTouch = true;
 
-function showScreensaver() {
-  goHome();
-  screensaver.style.display = 'flex';
-}
+function resetScreensaver(){
 
-function hideScreensaver() {
   screensaver.style.display = 'none';
-}
 
-function startScreensaverTimer() {
   clearTimeout(screensaverTimer);
 
   screensaverTimer = setTimeout(() => {
-    showScreensaver();
+
+    goHome();
+
+    screensaver.style.display = 'block';
+
   }, 180000); // 3 minutes
+
 }
 
-function handleActivity() {
+document.addEventListener(
+  'click',
+  resetScreensaver
+);
 
-  // First touch just exits screensaver
-  if (firstTouch) {
-    firstTouch = false;
-    hideScreensaver();
-    startScreensaverTimer();
-    return;
-  }
+document.addEventListener(
+  'touchstart',
+  resetScreensaver
+);
 
-  hideScreensaver();
-  startScreensaverTimer();
-}
-
-document.addEventListener('click', handleActivity);
-document.addEventListener('touchstart', handleActivity);
-
-// START WITH SCREENSAVER VISIBLE
-showScreensaver();
+resetScreensaver();
   /* =========================================
      INIT
   ========================================= */
