@@ -393,34 +393,38 @@ window.addEventListener(
 
 let screensaverTimer;
 
-function resetScreensaver(){
+function showScreensaver() {
+  goHome();
+  screensaver.style.display = 'block';
+}
 
+function hideScreensaver() {
   screensaver.style.display = 'none';
+}
+
+function resetScreensaver() {
 
   clearTimeout(screensaverTimer);
 
   screensaverTimer = setTimeout(() => {
-
-    goHome();
-
-    screensaver.style.display = 'block';
-
-  }, 180000); // 3 minutes
+    showScreensaver();
+  }, 180000);
 
 }
 
-document.addEventListener(
-  'click',
-  resetScreensaver
-);
+document.addEventListener('click', () => {
+  hideScreensaver();
+  resetScreensaver();
+});
 
-document.addEventListener(
-  'touchstart',
-  resetScreensaver
-);
+document.addEventListener('touchstart', () => {
+  hideScreensaver();
+  resetScreensaver();
+});
 
-goHome();
-screensaver.style.display = 'block';
+/* START WITH SCREENSAVER */
+showScreensaver();
+resetScreensaver();
   /* =========================================
      INIT
   ========================================= */
